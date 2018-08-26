@@ -10,16 +10,19 @@
     "start": "live-server public/"
   },
   "dependencies": {
+    "@linniaprotocol/linnia-js": "^0.1.4",
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
     "babel-loader": "7.1.1",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
+    "ipfs-mini": "^1.1.2",
     "live-server": "^1.2.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "reactstrap": "^6.4.0",
     "validator": "8.0.0",
+    "web3": "^1.0.0-beta.35",
     "webpack": "3.1.0"
   }
 }

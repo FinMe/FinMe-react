@@ -1,9 +1,15 @@
 import React from 'react';
 
+const styles = {
+   navBar: {
+      background: '#ffffff'
+   }
+};
+
 const Header = () => {
    return (
       <div>
-         <nav className="navbar navbar-inverse navbar-fixed-top">
+         <nav className="navbar navbar-default navbar-fixed-top" style={styles.navBar}>
             <div className="container">
               <div className="navbar-header">
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

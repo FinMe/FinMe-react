@@ -607,23 +607,35 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var FinMeApp = function (_React$Component) {
    _inherits(FinMeApp, _React$Component);
 
-   function FinMeApp() {
+   function FinMeApp(props) {
       _classCallCheck(this, FinMeApp);
 
-      return _possibleConstructorReturn(this, (FinMeApp.__proto__ || Object.getPrototypeOf(FinMeApp)).apply(this, arguments));
+      var _this = _possibleConstructorReturn(this, (FinMeApp.__proto__ || Object.getPrototypeOf(FinMeApp)).call(this, props));
+
+      _this.state = {
+         metaMaskExists: false
+      };
+      return _this;
    }
 
    _createClass(FinMeApp, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+         // Check if metamask is in users browser
+         if (web3.currentProvider.isMetaMask) {
+            this.setState(function () {
+               metaMaskExists: true;
+            });
+         } else {
+            alert('Install metamask to use application');
+         }
+      }
+   }, {
       key: 'render',
       value: function render() {
          return _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(
-               'p',
-               null,
-               'FinMeApp'
-            ),
             _react2.default.createElement(_Header2.default, null)
          );
       }
@@ -30808,40 +30820,40 @@ var Header = function Header() {
     null,
     _react2.default.createElement(
       "nav",
-      { "class": "navbar navbar-inverse navbar-fixed-top" },
+      { className: "navbar navbar-inverse navbar-fixed-top" },
       _react2.default.createElement(
         "div",
-        { "class": "container" },
+        { className: "container" },
         _react2.default.createElement(
           "div",
-          { "class": "navbar-header" },
+          { className: "navbar-header" },
           _react2.default.createElement(
             "button",
-            { type: "button", "class": "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
             _react2.default.createElement(
               "span",
-              { "class": "sr-only" },
+              { className: "sr-only" },
               "Toggle navigation"
             ),
-            _react2.default.createElement("span", { "class": "icon-bar" }),
-            _react2.default.createElement("span", { "class": "icon-bar" }),
-            _react2.default.createElement("span", { "class": "icon-bar" })
+            _react2.default.createElement("span", { className: "icon-bar" }),
+            _react2.default.createElement("span", { className: "icon-bar" }),
+            _react2.default.createElement("span", { className: "icon-bar" })
           ),
           _react2.default.createElement(
             "a",
-            { "class": "navbar-brand", href: "#" },
+            { className: "navbar-brand", href: "#" },
             "FinMe"
           )
         ),
         _react2.default.createElement(
           "div",
-          { id: "navbar", "class": "collapse navbar-collapse" },
+          { id: "navbar", className: "collapse navbar-collapse" },
           _react2.default.createElement(
             "ul",
-            { "class": "nav navbar-nav" },
+            { className: "nav navbar-nav" },
             _react2.default.createElement(
               "li",
-              { "class": "active" },
+              { className: "active" },
               _react2.default.createElement(
                 "a",
                 { href: "#" },
